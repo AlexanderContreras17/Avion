@@ -1,0 +1,28 @@
+﻿<Window x:Class="Avion.wndJuego"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avion"
+        mc:Ignorable="d" Loaded="Window_Loaded"
+        MouseMove="Window_MouseMove"
+        KeyDown="Window_KeyDown"
+        Title="wndJuego" Height="450" Width="800">
+    <Canvas x:Name="area">
+        <TextBlock x:Name="CordX" Text="x: 0"/>
+        <TextBlock x:Name="CordY" Text="y: 0" Canvas.Left="50"/>
+        <TextBlock x:Name="Tecla" Text="tecla" Canvas.Left="100"/>
+        <TextBlock x:Name="Contador" Text="c" Canvas.Left="150"/>
+        <Canvas Canvas.Top="200" x:Name="avion" Height="78" Width="76" Canvas.Left="362" RenderTransformOrigin="3.5,0.5">
+            <Path Stroke="Black" Fill="White" Panel.ZIndex="3" StrokeThickness="2" StrokeLineJoin="Round"
+                  Data="M32,22 v34 l4,20 q2,2 4,0 l4,-20 v-34 l-2,-16 q-4,-8 -8,0 z"/>
+            <Path Stroke="Black" Fill="White" Panel.ZIndex="2" StrokeThickness="2" StrokeLineJoin="Round"
+                  Data="M32,26 l-30,18 l-2,8 l24,-8 h28 l24,8 l-2,-8 l-30,-18 z"/>
+            <Path Stroke="Black" Fill="White" Panel.ZIndex="2" StrokeThickness="2" StrokeLineJoin="Round"
+                  Data="M38,58 l-16,8 l2,4 h28 l2,-4z"/>
+            <Canvas.RenderTransform>
+                <TranslateTransform x:Name="movAvion"/>
+            </Canvas.RenderTransform>
+        </Canvas>
+    </Canvas>
+</Window>
